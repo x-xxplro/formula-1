@@ -83,18 +83,22 @@ a { color: inherit; }
 .btn--ghost { background: transparent; color: var(--txt); border-color: var(--line); }
 .btn--ghost:hover { border-color: var(--red); color: var(--red-soft); }
 
-/* ===================== HERO (по центру) ===================== */
+/* ===================== HERO (идеальный центр) ===================== */
 .hero {
   position: relative;
   min-height: 90vh;
-  display: flex; align-items: center; justify-content: center;
-  padding: 5rem 2rem 6rem;
+  display: flex; 
+  flex-direction: column;
+  align-items: center;    /* Центрируем всё по горизонтали */
+  justify-content: center; /* Центрируем по вертикали */
+  padding: 5rem 2rem 4rem;
   overflow: hidden;
   background:
     radial-gradient(ellipse at 50% 40%, rgba(220,0,0,.20), transparent 55%),
     linear-gradient(180deg, #0b0b0d 0%, #150506 100%);
   text-align: center;
 }
+
 .hero__speedlines {
   position: absolute; inset: 0;
   background: repeating-linear-gradient(100deg,
@@ -110,12 +114,16 @@ a { color: inherit; }
   position: relative;
   max-width: 900px;
   width: 100%;
-  display: flex; flex-direction: column; align-items: center;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; /* Центрируем контент внутри */
 }
+
 .hero__kicker {
   font-family: var(--mono); font-size: .8rem; color: var(--red-soft);
   letter-spacing: .18em; text-transform: uppercase; margin-bottom: 1.75rem;
 }
+
 .hero__title {
   font-family: 'Rajdhani', sans-serif;
   font-size: clamp(3.5rem, 14vw, 11rem);
@@ -126,6 +134,7 @@ a { color: inherit; }
   text-align: center;
   width: 100%;
 }
+
 .hero__subtitle {
   font-size: clamp(1rem, 2.2vw, 1.25rem);
   color: var(--muted);
@@ -134,15 +143,18 @@ a { color: inherit; }
   text-align: center;
   line-height: 1.55;
 }
+
 .hero__actions {
   display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+  width: 100%;
 }
 
 .hero__meta {
-  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  margin-top: 3.5rem; /* Отступ от кнопок */
   display: flex; gap: .6rem; font-family: var(--mono); font-size: .8rem;
   color: var(--muted); letter-spacing: .05em;
-  white-space: nowrap;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* ===================== SECTIONS ===================== */
