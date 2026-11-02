@@ -1,0 +1,167 @@
+.heroes-page__wrap { max-width: 1180px; margin: 0 auto; padding: 4rem 2rem; }
+
+/* ---------- Профиль героя ---------- */
+.pilot {
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  padding: 3.5rem 0;
+  border-top: 1px solid var(--line);
+}
+.pilot:first-of-type { border-top: none; }
+
+/* Фото */
+.pilot__photo {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(160deg, #1a0406, #0b0b0d);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  position: sticky;
+  top: 90px;
+}
+.pilot__photo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.pilot__photo img.is-missing { display: none; }
+.pilot__photo-fallback {
+  position: absolute; inset: 0;
+  display: none; align-items: center; justify-content: center;
+  font-family: 'Rajdhani', sans-serif; font-size: 4rem; font-weight: 700;
+  color: #3a0f12; letter-spacing: .1em;
+}
+.pilot__photo img.is-missing + .pilot__photo-fallback { display: flex; }
+
+.pilot__tag {
+  position: absolute; bottom: 1rem; left: 1rem;
+  background: var(--red); color: #fff;
+  font-family: var(--mono); font-size: .7rem;
+  padding: .3rem .7rem; border-radius: 3px;
+  letter-spacing: .15em;
+}
+
+/* Инфо */
+.pilot__info h2 {
+  font-family: 'Rajdhani', sans-serif; font-size: 2.2rem; font-weight: 700;
+  letter-spacing: .02em; margin-bottom: .25rem;
+  line-height: 1.1;
+}
+.pilot__role {
+  color: var(--red-soft);
+  font-family: var(--mono);
+  font-size: .85rem;
+  margin-bottom: 2rem;
+  letter-spacing: .05em;
+}
+
+/* Таблица характеристик */
+.pilot__facts {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  font-family: var(--mono);
+  font-size: .9rem;
+  background: #121214;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.pilot__facts td {
+  padding: .6rem 1rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.pilot__facts tr:last-child td { border-bottom: none; }
+.pilot__facts td:first-child {
+  color: var(--muted);
+  width: 38%;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+/* Блоки текста */
+.pilot__info h3 {
+  font-family: 'Rajdhani', sans-serif; font-size: 1.3rem; font-weight: 600;
+  color: var(--yellow); margin: 1.5rem 0 .5rem; letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.pilot__info h4 {
+  font-family: 'Rajdhani', sans-serif; font-size: 1rem; font-weight: 600;
+  color: var(--txt); margin: 0 0 .5rem; letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.pilot__info p { margin-bottom: 1rem; color: #dcdce0; }
+.pilot__info ul { margin: 0 0 1rem 1.2rem; color: #dcdce0; }
+.pilot__info li { margin-bottom: .3rem; }
+
+.pilot__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--line);
+}
+
+/* Реверс — фото справа (опционально) */
+.pilot--reverse { grid-template-columns: 1fr minmax(220px, 300px); }
+.pilot--reverse .pilot__photo { order: 2; }
+.pilot--reverse .pilot__info { order: 1; }
+
+/* Кнопки */
+.heroes-page__back {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+  margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--line);
+}
+
+/* ===================== ADAPTIVE ===================== */
+
+@media (max-width: 1024px) {
+  .heroes-page__wrap { padding: 3rem 1.5rem; }
+  .pilot {
+    grid-template-columns: minmax(180px, 240px) 1fr;
+    gap: 1.75rem;
+  }
+  .pilot--reverse { grid-template-columns: 1fr minmax(180px, 240px); }
+  .pilot__photo { position: static; }
+  .pilot__info h2 { font-size: 1.85rem; }
+}
+
+@media (max-width: 768px) {
+  .heroes-page__wrap { padding: 2.5rem 1.25rem; }
+  .pilot {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 2.5rem 0;
+  }
+  .pilot--reverse { grid-template-columns: 1fr; }
+  .pilot--reverse .pilot__photo { order: 0; }
+  .pilot--reverse .pilot__info { order: 0; }
+
+  .pilot__photo {
+    max-width: 260px;
+    margin: 0 auto;
+    width: 100%;
+    position: static;
+  }
+  .pilot__info h2 { font-size: 1.7rem; }
+  .pilot__role { margin-bottom: 1.5rem; }
+  .pilot__cols { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .heroes-page__wrap { padding: 2rem 1rem; }
+  .pilot { padding: 2rem 0; gap: 1.5rem; }
+  .pilot__photo { max-width: 220px; }
+  .pilot__info h2 { font-size: 1.5rem; }
+  .pilot__role { font-size: .78rem; }
+  .pilot__facts { font-size: .82rem; }
+  .pilot__facts td { padding: .5rem .75rem; }
+  .pilot__facts td:first-child { font-size: .7rem; }
+  .pilot__info h3 { font-size: 1.1rem; }
+  .pilot__info h4 { font-size: .9rem; }
+  .heroes-page__back { margin-top: 3rem; padding-top: 1.5rem; }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OUT-LAP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home">
+
+<header class="nav">
+  <div class="nav__logo">
+    <a href="index.html"><span class="nav__dot"></span> OUT-LAP</a>
+  </div>
+  <nav class="nav__links">
+    <a href="#chapters">Главы</a>
+    <a href="heroes.html">Герои</a>
+    <a href="chapter.html?ch=0">Вступление</a>
+    <a href="chapter.html?ch=99">Эпилог</a>
+  </nav>
+  <div class="nav__progress">
+    <span id="progress-label">Круг 0 / 0</span>
+    <div class="nav__bar"><div id="progress-fill"></div></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero__speedlines"></div>
+  <div class="hero__content">
+    <p class="hero__kicker">Фанфик · спорт-романтика · Scuderia Ferrari HP · 2026</p>
+    <h1 class="hero__title">OUT-LAP</h1>
+    <p class="hero__subtitle">
+      От ненависти к любви: медленно,<br>на шинах, которые ещё не прогрелись.
+    </p>
+    <div class="hero__actions" id="hero-actions">
+      <a href="chapter.html?ch=1" class="btn btn--primary" id="btn-start">
+        Начать читать
+      </a>
+      <a href="#" class="btn btn--primary" id="btn-continue" style="display:none;">
+        Продолжить главу <span id="btn-continue-num"></span>
+      </a>
+      <a href="chapter.html?ch=0" class="btn btn--ghost">
+        Познакомиться с героями
+      </a>
+    </div>
+  </div>
+  <div class="hero__meta">
+    <span>25 глав + эпилог</span>
+    <span>·</span>
+    <span>Кармен × Ханс</span>
+    <span>·</span>
+    <span>enemies to lovers</span>
+  </div>
+</section>
+
+<section id="heroes" class="heroes">
+  <h2 class="section-title">Пилоты пит-уолла</h2>
+  <p class="section-sub">Два человека, которые не должны были сработаться. И сработались.</p>
+
+  <div class="heroes__grid">
+    <article class="card card--pilot">
+      <div class="card__tag">STRATEGY</div>
+      <h3>Кармен Диас Маркес</h3>
+      <p class="card__meta">32 · Аликанте · стратег Ferrari</p>
+      <p class="card__quote">«У вас нет допуска на раннее утро».</p>
+      <ul class="card__stats">
+        <li><span>Сильная сторона</span><b>счёт</b></li>
+        <li><span>Слабая сторона</span><b>контроль</b></li>
+        <li><span>Рана</span><b>этап 2024</b></li>
+      </ul>
+      <a href="heroes.html#carmen" class="card__link">Подробнее →</a>
+    </article>
+
+    <article class="card card--mechanic">
+      <div class="card__tag">GARAGE</div>
+      <h3>Ханс Мюллер</h3>
+      <p class="card__meta">28 · Кёльн · первый механик Ferrari</p>
+      <p class="card__quote">«Цифры берутся из рук».</p>
+      <ul class="card__stats">
+        <li><span>Сильная сторона</span><b>баланс</b></li>
+        <li><span>Слабая сторона</span><b>упрямство</b></li>
+        <li><span>Рана</span><b>Йонас</b></li>
+      </ul>
+      <a href="heroes.html#hans" class="card__link">Подробнее →</a>
+    </article>
+  </div>
+</section>
+
+<section id="chapters" class="chapters">
+  <h2 class="section-title">Главы</h2>
+  <p class="section-sub">Каждая глава — этап сезона 2026</p>
+  <div class="chapters__grid" id="chapter-grid"></div>
+</section>
+
+<section class="radio-block">
+  <h2 class="section-title">Из эфира</h2>
+  <div class="radio">
+    <div class="radio__head">РАДИО · Сузука · круг 23</div>
+    <p><b>ШАРЛЬ:</b> Слушай, по-моему, мне поставили софт. Разве это было в нашем плане?</p>
+    <p><b>КАРМЕН:</b> Что вы сделали?</p>
+    <p><b>ХАНС:</b> Всего-то поставили софт.</p>
+  </div>
+</section>
+
+<footer class="foot">
+  <p>OUT-LAP · спорт и любовь · Formula-1 · Scuderia Ferrari HP · сезон 2026</p>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

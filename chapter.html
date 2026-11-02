@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Глава · OUT-LAP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/chapter.css">
+</head>
+<body class="reader">
+
+<!-- Тонкий прогресс-бар чтения -->
+<div class="read-progress" id="read-progress"></div>
+
+<header class="nav">
+  <div class="nav__logo">
+    <a href="index.html"><span class="nav__dot"></span> OUT-LAP</a>
+  </div>
+  <nav class="nav__links" id="chapter-nav">
+    <a id="prev-link">← Предыдущая</a>
+    <a href="index.html" id="exit-link">✕ Выйти</a>
+    <a id="next-link">Следующая →</a>
+  </nav>
+</header>
+
+<main class="chapter-wrap">
+  <div class="chapter-header">
+    <p class="chapter-num" id="ch-num"></p>
+    <h1 class="chapter-title" id="ch-title"></h1>
+    <p class="chapter-loc" id="ch-loc"></p>
+  </div>
+
+  <article class="chapter-body" id="ch-body"></article>
+
+  <div class="chapter-end" id="chapter-end"></div>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/chapter.js"></script>
+</body>
+</html>
